@@ -1,0 +1,419 @@
+# 𝐄𝐠𝐞𝐫𝐧@𝐥𝐚𝐨𝐬𝐡𝐮配置信息
+# 配置下载 URL: https://raw.githubusercontent.com/jnlaoshu/MySelf/master/Egern/Profile.yaml
+# 更新时间: 2025.11.28 09:06
+
+# 自动更新配置
+auto_update:
+    url: https://raw.githubusercontent.com/jnlaoshu/MySelf/master/Egern/Profile.yaml
+    interval: 86400
+# 基础配置
+ipv6: true
+http_port: 3080
+socks_port: 3090
+allow_external_connections: true
+vif_only: true
+hide_vpn_icon: true
+
+# DNS 劫持
+hijack_dns: 
+  - '*:53'
+
+# 数据库 URL 配置
+geoip_db_url: https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
+asn_db_url: https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-ASN.mmdb
+
+# 延迟测试 URL 配置
+proxy_latency_test_url: https://www.google.com/generate_204
+direct_latency_test_url: http://www.apple.com/library/test/success.html
+
+# 路由配置
+compat_route: false
+include_all_networks: false
+include_apns: false
+include_cellular_services: false
+include_local_networks: false
+
+# DNS 配置
+dns:
+  bootstrap:
+  - 233.5.5.5
+  - 119.29.29.29
+  upstreams:
+    AdGuard:
+      - quic://dns.adguard-dns.com   
+    China:
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+    Global:
+      - https://dns.google/dns-query
+      - https://1.1.1.1/dns-query
+  forward:
+    - regex:
+        match: ^ad(s?)\.
+        value: AdGuard
+    - proxy_rule_set:
+        match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMax/ChinaMax_All.list
+        value: China
+    - wildcard:
+        match: '*'
+        value: Global        
+  hosts:
+    dns.alidns.com: 223.5.5.5, 223.6.6.6, 2400:3200::1, 2400:3200:baba::1
+    doh.pub: 1.12.12.12, 120.53.53.53
+    dns.google: 8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844
+  public_ip_lookup_url: https://ifconfig.me/ip
+
+# 策略组配置
+policy_groups:
+- external:
+    name: 全部节点
+    type: select
+    urls:
+    - https://sub.store/download/collection/AllServer?target=Egern
+    icon: 🌹 
+- auto_test:
+    name: 香港节点
+    policies:
+    - 全部节点
+    flatten: true
+    filter: 🇭🇰|香港|HK|Hong
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/HongKong.png
+- auto_test:
+    name: 日本节点
+    policies:
+    - 全部节点
+    flatten: true
+    filter: 🇯🇵|日本|JP|Japan
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Japan.png
+- auto_test:
+    name: 美国节点
+    policies:
+    - 全部节点
+    flatten: true
+    filter: 🇺🇸|美国|US|States|American
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/UnitedStates.png
+- auto_test:
+    name: 德国节点
+    policies:
+    - 全部节点
+    flatten: true
+    filter: 🇩🇪|德国|DE|Germany
+    icon: https://raw.githubusercontent.com/SpeedupMaster/MySelf/main/image/Germany.png
+- select:
+    name: 自动选择
+    policies:
+    - 香港节点
+    - 日本节点
+    - 美国节点
+    - 德国节点
+    - DIRECT
+    icon: https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Auto_Speed.png
+
+- select:
+    name: Apple
+    policies:
+    - DIRECT
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/AppStore.png    
+- select:
+    name: AppleProxy
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Apple.png 
+- select:
+    name: Disney
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Disney+.png  
+- select:
+    name: Github
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/GitHub.png   
+- select:
+    name: Google
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Google.png 
+- select:
+    name: HBO
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/HBO.png 
+- select:
+    name: Instagram
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Instagram.png 
+- select:
+    name: Microsoft
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Microsoft.png 
+- select:
+    name: Netflix
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Netflix.png 
+- select:
+    name: OneDrive
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/OneDrive.png 
+- select:
+    name: PayPal
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/PayPal.png 
+- select:
+    name: Spotify
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Spotify.png 
+- select:
+    name: Telegram
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Telegram.png 
+- select:
+    name: TikTok
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/TikTok.png 
+- select:
+    name: Twitter
+    policies:
+    - 自动选择
+    - 香港节点
+    - 日本节点
+    - 美国节点
+    - 德国节点
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Twitter.png
+- select:
+    name: YouTube
+    policies:
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/YouTube.png    
+- select:
+    name: YouTubeMusic
+    policies:
+    - 自动选择
+    - 香港节点
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: true
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/YouTubeMusic.png 
+    
+
+# 代理规则配置
+rules:
+- domain_regex:
+    match: ^ad(s?)\..*
+    policy: REJECT
+- rule_set:
+    match: https://adrules.top/adrules.list
+    policy: REJECT
+- rule_set:
+    match: https://whatshub.top/rule/AntiAD.list
+    policy: REJECT
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/X/Egern/Rules/Ads_AWAvenue.yaml
+    policy: REJECT   
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/AppleProxy.yaml
+    policy: AppleProxy
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Apple.yaml
+    policy: Apple
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/AIGC.yaml
+    policy: AI
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Bing.yaml
+    policy: 自动选择
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Disney.yaml
+    policy: Disney
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Google.yaml
+    policy: Google
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Github.yaml
+    policy: Github
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/HBO.yaml
+    policy: HBO
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/X/Egern/Rules/Instagram.yaml
+    policy: Instagram
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Microsoft.yaml
+    policy: Microsoft
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Netflix.yaml
+    policy: Netflix
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/OneDrive.yaml
+    policy: OneDrive
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/PayPal.yaml
+    policy: PayPal
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Spotify.yaml
+    policy: Spotify
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Telegram.yaml
+    policy: Telegram
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/TikTok.yaml
+    policy: TikTok
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Twitter.yaml
+    policy: Twitter
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/WeChat.yaml
+    policy: WeChat
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/YouTube.yaml
+    policy: YouTube
+- rule_set:
+    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/YouTubeMusic.yaml
+    policy: YouTubeMusic
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All.list
+    policy: 自动选择
+- domain_suffix:
+    match: '*.cn'
+    policy: DIRECT
+- geoip:
+    match: CN
+    policy: DIRECT
+    no_resolve: true
+- ip_cidr:
+    match: 192.168.0.0/16, 10.0.0.0/8, 127.0.0.0/8, 172.16.0.0/12, 192.128.0.0/16, 224.0.0.0/24, fe80::/10
+    policy: DIRECT
+- rule_set:
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMax/ChinaMax_All.list
+    policy: DIRECT
+- default:
+    policy: 自动选择
+mitm:
+  enabled: true
+  ca_p12: egern.p12
+  ca_passphrase: egern
+  hostnames:
+    excludes:
+    - '*abchina.com.cn'
+
+# 模块配置
+modules:
+- url: https://raw.githubusercontent.com/mieqq/mieqq/refs/heads/master/skip-proxy-lists.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/SpeedupMaster/LoonKissSurge/refs/heads/main/Surge/Official/YouTube%E5%8E%BB%E5%B9%BF%E5%91%8A%5BMaasea%5D.official.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/IBL3ND/MK/refs/heads/main/today_almanac.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.beta.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%B7%98%E5%AE%9D%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%BD%91%E7%BB%9C%E8%BF%9E%E9%80%9A%E6%80%A7%E6%B5%8B%E8%AF%95.official.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Timecard/Moore/Timecard.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/GPT%20%E5%8F%AF%E7%94%A8%E6%A3%80%E6%B5%8B-%E6%97%A0%20WARP.official.sgmodule
+  enabled: true
+- url: https://whatshub.top/sgmodule/media.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.sgmodule
+  enabled: true
+- url: https://whatshub.top/sgmodule/ip-api.sgmodule
+  enabled: true
+- url: https://whatshub.top/sgmodule/crypto.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/158212892/QuantumultXMark/refs/heads/main/My/Egern/modules/pluginhub.yaml
+  enabled: true
+- url: https://raw.githubusercontent.com/obs1379/Egern/refs/heads/main/surge.qingr.moe_for_Egern.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20Sub-Store.official.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.beta.surge.sgmodule
+  enabled: true
