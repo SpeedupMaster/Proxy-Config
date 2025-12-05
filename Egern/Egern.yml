@@ -1,10 +1,6 @@
-# 𝐄𝐠𝐞𝐫𝐧@𝐥𝐚𝐨𝐬𝐡𝐮配置信息
-# 配置下载 URL: https://raw.githubusercontent.com/jnlaoshu/MySelf/master/Egern/Profile.yaml
-# 更新时间: 2025.11.28 09:06
-
 # 自动更新配置
 auto_update:
-    url: https://raw.githubusercontent.com/jnlaoshu/MySelf/master/Egern/Profile.yaml
+    url: https://raw.githubusercontent.com/SpeedupMaster/Proxy-Config/main/Egern/Egern.yml
     interval: 86400
 # 基础配置
 ipv6: true
