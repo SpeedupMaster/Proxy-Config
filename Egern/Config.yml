@@ -66,7 +66,7 @@ policy_groups:
     type: select
     urls:
     - https://sub.store/download/collection/AllServer?target=Egern
-    icon: 🌹 
+    icon: https://raw.githubusercontent.com/SpeedupMaster/MySelf/main/image/VPN.png
 - auto_test:
     name: 香港节点
     policies:
