@@ -102,7 +102,6 @@ policy_groups:
     - 日本节点
     - 美国节点
     - 德国节点
-    - DIRECT
     icon: https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Auto_Speed.png
 
 - select:
