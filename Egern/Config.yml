@@ -1,6 +1,6 @@
 # 自动更新配置
 auto_update:
-    url: https://raw.githubusercontent.com/SpeedupMaster/Proxy-Config/main/Egern/Egern.yml
+    url: https://raw.githubusercontent.com/SpeedupMaster/Proxy-Config/main/Egern/Config.yml
     interval: 86400
 # 基础配置
 ipv6: true
