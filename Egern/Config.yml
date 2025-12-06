@@ -327,7 +327,7 @@ rules:
     match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Spotify.yaml
     policy: Spotify
 - rule_set:
-    match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Telegram.yaml
+    match: https://raw.githubusercontent.com/SpeedupMaster/MySelf/main/Egern/Rule/Telegram.yaml
     policy: Telegram
 - rule_set:
     match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/TikTok.yaml
