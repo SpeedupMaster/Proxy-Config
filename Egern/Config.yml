@@ -15,7 +15,7 @@ geoip_db_url: https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Count
 asn_db_url: https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-ASN.mmdb
 
 # 延迟测试 URL 配置
-proxy_latency_test_url: https://www.google.com/generate_204
+proxy_latency_test_url: http://cp.cloudflare.com/generate_204
 direct_latency_test_url: http://www.apple.com/library/test/success.html
 
 # 路由配置
