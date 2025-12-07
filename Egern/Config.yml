@@ -91,13 +91,16 @@ policy_groups:
     flatten: true
     filter: 🇩🇪|德国|DE|Germany
     icon: https://raw.githubusercontent.com/SpeedupMaster/MySelf/main/image/Germany.png
-- select:
+- auto_test:
     name: 自动选择
     policies:
     - 香港节点
     - 日本节点
     - 美国节点
     - 德国节点
+    interval: 60
+    tolerance: 100
+    timeout: 5
     icon: https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Auto_Speed.png
 - select:
     name: AI
@@ -380,35 +383,63 @@ mitm:
 
 # 模块配置
 modules:
-- url: https://raw.githubusercontent.com/mieqq/mieqq/refs/heads/master/skip-proxy-lists.sgmodule
+- name: 跳过部分应用的代理检测
+  url: https://raw.githubusercontent.com/mieqq/mieqq/refs/heads/master/skip-proxy-lists.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/SpeedupMaster/LoonKissSurge/refs/heads/main/Surge/Official/YouTube%E5%8E%BB%E5%B9%BF%E5%91%8A%5BMaasea%5D.official.sgmodule
+  interval: 86400
+- name: Youtube (Music) Enhance
+  url: https://raw.githubusercontent.com/SpeedupMaster/LoonKissSurge/refs/heads/main/Surge/Official/YouTube%E5%8E%BB%E5%B9%BF%E5%91%8A%5BMaasea%5D.official.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/IBL3ND/MK/refs/heads/main/today_almanac.sgmodule
+  interval: 86400
+- name: 今日黄历
+  url: https://raw.githubusercontent.com/IBL3ND/MK/refs/heads/main/today_almanac.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.beta.sgmodule
+  interval: 86400
+- name: 可莉广告过滤器
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%8F%AF%E8%8E%89%E5%B9%BF%E5%91%8A%E8%BF%87%E6%BB%A4%E5%99%A8.beta.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%B7%98%E5%AE%9D%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  interval: 86400
+- name: 淘宝去广告
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E6%B7%98%E5%AE%9D%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%BD%91%E7%BB%9C%E8%BF%9E%E9%80%9A%E6%80%A7%E6%B5%8B%E8%AF%95.official.sgmodule
+  interval: 86400
+- name: 网络连通性测试
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%BD%91%E7%BB%9C%E8%BF%9E%E9%80%9A%E6%80%A7%E6%B5%8B%E8%AF%95.official.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
+  interval: 86400
+- name: Chatgpt可用区域检测
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/GPT%20%E5%8F%AF%E7%94%A8%E6%A3%80%E6%B5%8B-%E6%97%A0%20WARP.official.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/GPT%20%E5%8F%AF%E7%94%A8%E6%A3%80%E6%B5%8B-%E6%97%A0%20WARP.official.sgmodule
+  interval: 86400
+- name: 流媒体检测
+  url: https://whatshub.top/sgmodule/media.sgmodule
   enabled: true
-- url: https://whatshub.top/sgmodule/media.sgmodule
+  interval: 86400
+- name: NetSpeed
+  url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.sgmodule
+  interval: 86400
+- name: IP信息
+  url: https://whatshub.top/sgmodule/ip-api.sgmodule
   enabled: true
-- url: https://whatshub.top/sgmodule/ip-api.sgmodule
+  interval: 86400
+- name: 可莉插件中心2Egern
+  url: https://raw.githubusercontent.com/158212892/QuantumultXMark/refs/heads/main/My/Egern/modules/pluginhub.yaml
   enabled: true
-- url: https://raw.githubusercontent.com/158212892/QuantumultXMark/refs/heads/main/My/Egern/modules/pluginhub.yaml
+  interval: 86400
+- name: Surge模块中心转Egern兼容
+  url: https://raw.githubusercontent.com/obs1379/Egern/refs/heads/main/surge.qingr.moe_for_Egern.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/obs1379/Egern/refs/heads/main/surge.qingr.moe_for_Egern.sgmodule
+  interval: 86400
+- name: BoxJs
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20BoxJs.official.sgmodule
+  interval: 86400
+- name: Sub-Store
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20Sub-Store.official.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E2%AD%90%EF%B8%8F%20Sub-Store.official.sgmodule
+  interval: 86400
+- name: Script Hub
+  url: https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.beta.surge.sgmodule
   enabled: true
-- url: https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/refs/heads/main/modules/script-hub.beta.surge.sgmodule
-  enabled: true
+  interval: 86400
