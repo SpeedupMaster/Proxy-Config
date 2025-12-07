@@ -99,7 +99,14 @@ policy_groups:
     - 美国节点
     - 德国节点
     icon: https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Auto_Speed.png
-
+- select:
+    name: AI
+    policies:
+    - 美国节点
+    - 日本节点
+    - 德国节点
+    flatten: false
+    icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/ChatGPT.png
 - select:
     name: Apple
     policies:
