@@ -109,7 +109,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/AppStore.png    
 - select:
     name: AppleProxy
@@ -119,7 +119,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Apple.png 
 - select:
     name: Disney
@@ -129,7 +129,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Disney+.png  
 - select:
     name: Github
@@ -139,7 +139,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/GitHub.png   
 - select:
     name: Google
@@ -149,7 +149,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Google.png 
 - select:
     name: HBO
@@ -159,7 +159,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/HBO.png 
 - select:
     name: Instagram
@@ -169,7 +169,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Instagram.png 
 - select:
     name: Microsoft
@@ -179,7 +179,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Microsoft.png 
 - select:
     name: Netflix
@@ -189,7 +189,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Netflix.png 
 - select:
     name: OneDrive
@@ -199,7 +199,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/OneDrive.png 
 - select:
     name: PayPal
@@ -209,7 +209,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/PayPal.png 
 - select:
     name: Spotify
@@ -219,7 +219,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Spotify.png 
 - select:
     name: Telegram
@@ -229,7 +229,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Telegram.png 
 - select:
     name: TikTok
@@ -239,7 +239,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/TikTok.png 
 - select:
     name: Twitter
@@ -249,6 +249,7 @@ policy_groups:
     - 日本节点
     - 美国节点
     - 德国节点
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/Twitter.png
 - select:
     name: YouTube
@@ -256,7 +257,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/YouTube.png    
 - select:
     name: YouTubeMusic
@@ -266,7 +267,7 @@ policy_groups:
     - 美国节点
     - 日本节点
     - 德国节点
-    flatten: true
+    flatten: false
     icon: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/image/YouTubeMusic.png 
     
 
@@ -327,7 +328,7 @@ rules:
     match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/Spotify.yaml
     policy: Spotify
 - rule_set:
-    match: https://raw.githubusercontent.com/SpeedupMaster/MySelf/main/Egern/Rule/Telegram.yaml
+    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list
     policy: Telegram
 - rule_set:
     match: https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Egern/Rule/TikTok.yaml
