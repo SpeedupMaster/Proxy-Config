@@ -56,6 +56,8 @@ tun:
     - fe80::/10
     - ff00::/8
   # Linux only:
+  # route-exclude-address-set works only on Linux with nftables,
+  # and requires auto-route + auto-redirect.
   # auto-redirect: true
   # route-exclude-address-set:
   #   - private-ip
@@ -91,30 +93,30 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   proxy-server-nameserver:
-    - https://223.5.5.5/dns-query#DIRECT
-    - https://doh.pub/dns-query#DIRECT
+    - 223.5.5.5
+    - 119.29.29.29
   direct-nameserver:
-    - https://223.5.5.5/dns-query#DIRECT
-    - https://doh.pub/dns-query#DIRECT
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
   direct-nameserver-follow-policy: true
   nameserver-policy:
     "rule-set:private-domain":
       - 223.5.5.5
       - 119.29.29.29
     "rule-set:cn-domain":
-      - https://223.5.5.5/dns-query#DIRECT
-      - https://doh.pub/dns-query#DIRECT
+      - https://223.5.5.5/dns-query
+      - https://doh.pub/dns-query
     "geosite:private":
       - 223.5.5.5
     "geosite:cn":
-      - https://223.5.5.5/dns-query#DIRECT
-      - https://doh.pub/dns-query#DIRECT
+      - https://223.5.5.5/dns-query
+      - https://doh.pub/dns-query
   nameserver:
-    - https://1.1.1.1/dns-query#RULES
-    - https://dns.google/dns-query#RULES
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
   fallback:
-    - tls://1.0.0.1:853#RULES
-    - tls://8.8.4.4:853#RULES
+    - tls://1.0.0.1:853
+    - tls://8.8.4.4:853
   fallback-filter:
     geoip: true
     geoip-code: CN
